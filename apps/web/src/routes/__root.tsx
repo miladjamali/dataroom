@@ -54,7 +54,7 @@ function RootComponent() {
                 Home
               </Link>
               <a 
-                href="http://localhost:3001" 
+                href={import.meta.env.VITE_APP_DOC_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-blue-600 transition-colors font-medium"
@@ -150,7 +150,7 @@ function RootComponent() {
                   Home
                 </Link>
                 <a 
-                  href={import.meta.env.VITE_APP_API_BASE_URL}
+                  href={import.meta.env.VITE_APP_DOC_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={closeMobileMenu}
