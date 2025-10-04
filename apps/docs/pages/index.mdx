@@ -1,0 +1,80 @@
+# DataRoom MVP Documentation
+
+Welcome to the **DataRoom MVP** documentation! This project is a take-home assessment that demonstrates a comprehensive secure virtual data room solution built with modern web technologies.
+
+## 🎯 Assessment Overview
+
+This take-home project is designed to evaluate real-world engineering capabilities through the development of a comprehensive Data Room solution for **Acme Corp's multi-billion dollar acquisition**.
+
+### Key Objectives
+- **User experience and functionality** - Intuitive UX flows, edge case handling, error states
+- **Design and polish** - Clean design without unimplemented features  
+- **Code quality and readability** - Well-structured, maintainable code
+
+### Timeline
+- **Expected**: 4-6 hours
+- **Flexible**: Room for creative exploration and thorough implementation
+
+## 🏗️ Architecture Overview
+
+DataRoom MVP is built as a modern **monorepo** with the following structure:
+
+```
+dataroom/
+├── apps/
+│   ├── web/          # React frontend (Vite + TanStack Router)
+│   ├── api/          # Backend API (Hono + Drizzle ORM)
+│   └── docs/         # Documentation (Next.js + Nextra)
+└── packages/
+    ├── ui/           # Shared UI components
+    ├── types/        # TypeScript type definitions
+    ├── auth/         # Authentication utilities
+    ├── models/       # Database models
+    ├── constants/    # Shared constants
+    └── utils/        # Utility functions
+```
+
+## 🚀 Quick Start
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/miladjamali/dataroom.git
+   cd dataroom
+   ```
+
+2. **Install dependencies**
+   ```bash
+   pnpm install
+   ```
+
+3. **Start development servers**
+   ```bash
+   pnpm run dev
+   ```
+
+4. **Access the applications**
+   - **Web App**: http://localhost:5000
+   - **API**: http://localhost:3000  
+   - **Documentation**: http://localhost:3001
+
+## 📚 Navigation
+
+Use the sidebar to explore different sections of the documentation:
+
+- **[Getting Started](/getting-started)** - Setup and installation
+- **[Features](/features)** - Core functionality overview
+- **[API Reference](/api)** - Backend API documentation  
+- **[Architecture](/architecture)** - Technical implementation details
+- **[Deployment](/deployment)** - Hosting and production setup
+
+## 🎨 Technology Stack
+
+- **Frontend**: React 19, TypeScript, TanStack Router, Tailwind CSS
+- **Backend**: Hono, Drizzle ORM, PostgreSQL, Vercel Blob
+- **UI**: Custom component library with Radix UI primitives
+- **Build Tools**: Vite, Turbo (monorepo), pnpm
+- **Deployment**: Vercel (recommended)
+
+---
+
+Ready to explore? Start with the **[Getting Started](/getting-started)** guide!

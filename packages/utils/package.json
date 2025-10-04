@@ -1,0 +1,43 @@
+{
+  "name": "@dataroom/utils",
+  "version": "0.1.0",
+  "description": "Shared utility functions for the dataroom monorepo",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./format": {
+      "types": "./dist/format.d.ts",
+      "import": "./dist/format.js"
+    },
+    "./validation": {
+      "types": "./dist/validation.d.ts",
+      "import": "./dist/validation.js"
+    },
+    "./date": {
+      "types": "./dist/date.d.ts",
+      "import": "./dist/date.js"
+    },
+    "./file": {
+      "types": "./dist/file.d.ts",
+      "import": "./dist/file.js"
+    },
+    "./string": {
+      "types": "./dist/string.d.ts",
+      "import": "./dist/string.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  },
+  "dependencies": {}
+}

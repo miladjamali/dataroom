@@ -1,0 +1,194 @@
+# Getting Started
+
+This guide will help you set up the DataRoom MVP project locally and understand the development workflow.
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- **Node.js** (v18 or higher)
+- **pnpm** (v9.0.0 or higher)  
+- **Git**
+- **PostgreSQL** (for production database) or use **Neon** (recommended)
+
+## Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/miladjamali/dataroom.git
+cd dataroom
+```
+
+### 2. Install Dependencies
+
+The project uses **pnpm workspaces** for monorepo management:
+
+```bash
+pnpm install
+```
+
+This will install dependencies for all packages and applications in the monorepo.
+
+### 3. Environment Setup
+
+Create environment files for the API:
+
+```bash
+# In apps/api/
+cp .env.example .env.local
+```
+
+Configure your environment variables:
+
+```env
+# Database
+DATABASE_URL="your-postgresql-connection-string"
+
+# JWT Secret
+JWT_SECRET_KEY="your-super-secret-jwt-key"
+
+# Vercel Blob (for file storage)
+BLOB_READ_WRITE_TOKEN="your-vercel-blob-token"
+```
+
+### 4. Database Setup
+
+The project uses **Drizzle ORM** with PostgreSQL:
+
+```bash
+# Generate database schema
+cd apps/api
+pnpm run db:generate
+
+# Run migrations
+pnpm run db:migrate
+
+# (Optional) Seed with sample data
+pnpm run db:seed
+```
+
+### 5. Start Development Servers
+
+From the root directory:
+
+```bash
+# Start all development servers
+pnpm run dev
+```
+
+This will start:
+- **Web App**: http://localhost:5000
+- **API Server**: http://localhost:3000
+- **Documentation**: http://localhost:3001
+
+## Development Workflow
+
+### Project Structure
+
+```
+dataroom/
+├── apps/
+│   ├── web/              # Frontend React application
+│   │   ├── src/
+│   │   │   ├── routes/   # TanStack Router pages
+│   │   │   ├── lib/      # Utilities and API client
+│   │   │   └── components/ # React components
+│   │   └── vite.config.ts
+│   │
+│   ├── api/              # Backend Hono server
+│   │   ├── src/
+│   │   │   ├── routes/   # API route handlers
+│   │   │   ├── db.ts     # Database connection
+│   │   │   └── index.ts  # Server entry point
+│   │   └── drizzle.config.ts
+│   │
+│   └── docs/             # Documentation site
+│       ├── pages/        # MDX documentation pages
+│       └── theme.config.tsx
+│
+└── packages/             # Shared packages
+    ├── ui/               # Component library
+    ├── types/            # TypeScript definitions
+    ├── auth/             # Authentication utilities
+    ├── models/           # Database schemas
+    └── utils/            # Shared utilities
+```
+
+### Making Changes
+
+1. **Frontend Changes**: Edit files in `apps/web/src/`
+2. **Backend Changes**: Edit files in `apps/api/src/`
+3. **UI Components**: Edit files in `packages/ui/src/`
+4. **Documentation**: Edit files in `apps/docs/pages/`
+
+### Building for Production
+
+```bash
+# Build all packages
+pnpm run build
+
+# Build specific app
+cd apps/web
+pnpm run build
+```
+
+## Common Tasks
+
+### Adding New Dependencies
+
+```bash
+# Add to specific workspace
+pnpm add package-name --filter web
+pnpm add package-name --filter api
+
+# Add to root (affects all workspaces)
+pnpm add package-name -w
+```
+
+### Database Operations
+
+```bash
+cd apps/api
+
+# Create new migration
+pnpm run db:generate
+
+# Apply migrations
+pnpm run db:migrate
+
+# Push schema directly (development)
+pnpm run db:push
+```
+
+### Type Checking
+
+```bash
+# Check types across all packages
+pnpm run check-types
+
+# Check specific package
+cd packages/ui
+pnpm run typecheck
+```
+
+## Troubleshooting
+
+### Common Issues
+
+1. **Port conflicts**: Change ports in package.json scripts if needed
+2. **Database connection**: Verify DATABASE_URL is correct
+3. **Type errors**: Run `pnpm run build` to build shared packages
+4. **Module not found**: Clear node_modules and reinstall
+
+### Getting Help
+
+If you encounter issues:
+
+1. Check the [Architecture](/architecture) documentation
+2. Review the [API Reference](/api) for backend details
+3. Examine the source code in the GitHub repository
+
+---
+
+Next: Learn about the [core features](/features) of DataRoom MVP!

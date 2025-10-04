@@ -1,0 +1,143 @@
+# Core Features
+
+DataRoom MVP provides comprehensive document management capabilities designed for enterprise due diligence processes. Here's an overview of the core functionality implemented.
+
+## 📁 Folder Management
+
+### Create Folders
+- **Hierarchical Structure**: Create nested folder structures
+- **Validation**: Prevent duplicate names and invalid characters
+- **Real-time Updates**: Instant UI updates after folder creation
+
+### View Folder Contents
+- **Breadcrumb Navigation**: Clear navigation path
+- **Mixed Content**: Display both folders and files in organized layout
+- **Drag & Drop**: Move files and folders between locations
+
+### Rename Folders
+- **In-place Editing**: Click to rename functionality
+- **Conflict Resolution**: Handle naming conflicts gracefully
+- **Validation**: Ensure valid folder names
+
+### Delete Folders
+- **Cascade Deletion**: Remove folder and all contents
+- **Confirmation**: Require user confirmation for destructive actions
+- **Progress Feedback**: Show deletion progress for large folders
+
+## 📄 File Operations
+
+### Upload Files
+- **Multiple Formats**: Support for PDF, images, documents
+- **Size Validation**: Enforce file size limits (10MB default)
+- **Progress Tracking**: Real-time upload progress
+- **Error Handling**: Clear error messages for failed uploads
+
+### File Preview
+- **PDF Viewer**: Built-in PDF preview capability
+- **Image Preview**: Thumbnail and full-size image viewing
+- **Metadata Display**: Show file size, type, upload date
+
+### File Management
+- **Download**: Secure file download with proper headers
+- **Rename**: Update file names with validation
+- **Move**: Drag and drop files between folders
+- **Delete**: Secure deletion with confirmation
+
+### File Metadata
+- **Tags**: Add searchable tags to files
+- **Descriptions**: Rich text descriptions
+- **Visibility**: Public/private access controls
+- **Timestamps**: Creation and modification dates
+
+## 🔍 Search & Filter
+
+### Global Search
+- **Filename Search**: Search by file and folder names
+- **Content Search**: Full-text search within documents (planned)
+- **Tag Search**: Filter by tags and metadata
+
+### Advanced Filtering
+- **File Type**: Filter by document type (PDF, images, etc.)
+- **Date Range**: Filter by upload or modification date
+- **Size Range**: Filter by file size
+- **Visibility**: Filter by public/private status
+
+### Sorting Options
+- **Name**: Alphabetical sorting
+- **Date**: Sort by creation or modification date
+- **Size**: Sort by file size
+- **Type**: Group by file type
+
+## 🔐 Security & Access Control
+
+### Authentication
+- **JWT-based**: Secure token-based authentication
+- **Session Management**: Automatic token refresh
+- **Role-based Access**: User roles and permissions
+
+### File Security
+- **Private by Default**: Files are private unless explicitly shared
+- **Access Control**: Granular permissions per file/folder
+- **Secure Storage**: Files stored in Vercel Blob with secure URLs
+
+### Audit Trail
+- **Activity Logging**: Track file operations and access
+- **User Actions**: Record who did what and when
+- **Security Events**: Log authentication and permission changes
+
+## 📊 Analytics & Reporting
+
+### Usage Statistics
+- **File Count**: Total files and folders
+- **Storage Usage**: Total storage consumed
+- **User Activity**: Track user engagement
+
+### File Insights
+- **Popular Files**: Most accessed documents
+- **Recent Activity**: Latest uploads and modifications
+- **Storage Breakdown**: Usage by file type and size
+
+## 🚀 Performance Features
+
+### Optimized Loading
+- **Lazy Loading**: Load content as needed
+- **Pagination**: Handle large file lists efficiently
+- **Caching**: Smart caching for better performance
+
+### Responsive Design
+- **Mobile Friendly**: Works on all device sizes
+- **Touch Support**: Optimized for touch interactions
+- **Progressive Enhancement**: Works without JavaScript
+
+## 🔄 Real-time Updates
+
+### Live Synchronization
+- **Real-time Notifications**: Instant updates for file changes
+- **Collaborative Features**: Multiple users can work simultaneously
+- **Conflict Resolution**: Handle concurrent modifications
+
+### Background Processing
+- **Async Operations**: Non-blocking file operations
+- **Queue Management**: Handle multiple uploads efficiently
+- **Progress Tracking**: Real-time operation progress
+
+## 🎨 User Experience
+
+### Intuitive Interface
+- **Clean Design**: Minimal, professional interface
+- **Consistent Interactions**: Predictable user interactions
+- **Keyboard Shortcuts**: Power user shortcuts
+
+### Error Handling
+- **Graceful Degradation**: Handle errors elegantly
+- **User Feedback**: Clear error messages and success notifications
+- **Recovery Options**: Ways to recover from errors
+
+### Accessibility
+- **Screen Reader Support**: ARIA labels and semantic HTML
+- **Keyboard Navigation**: Full keyboard accessibility
+- **High Contrast**: Support for accessibility preferences
+
+---
+
+Next: Explore the [API Reference](/api) to understand the backend implementation!

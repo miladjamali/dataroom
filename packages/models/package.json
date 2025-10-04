@@ -1,0 +1,44 @@
+{
+  "name": "@dataroom/models",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./database": {
+      "types": "./dist/database.d.ts",
+      "import": "./dist/database.js"
+    },
+    "./validations": {
+      "types": "./dist/validations.d.ts",
+      "import": "./dist/validations.js"
+    },
+    "./types": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/types.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --ext .ts,.tsx",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "zod": "^3.23.8",
+    "@dataroom/types": "workspace:*"
+  },
+  "peerDependencies": {
+    "drizzle-orm": "^0.44.6"
+  },
+  "devDependencies": {
+    "@types/node": "^22.12.4",
+    "typescript": "^5.7.2"
+  }
+}
